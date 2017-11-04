@@ -1,0 +1,64 @@
+h1 {
+	text-align: center;
+	font-family: 'Contrail One', cursive;
+	font-size: 60px;
+	color: #FFFFFF;
+	text-decoration: underline;
+	letter-spacing: 1.5px;
+}
+
+#container {
+	background-color: transparent;
+	border: 5px solid black;
+	margin: 5% 20% 5% 20%;
+	padding-right: 6px;
+	padding-left: 6px;
+	padding-bottom: 3rem;
+	border-radius: 3px;
+	border-color: rgba(180,230,230,0.7);
+	align-items: center;
+}
+
+#quote {
+	padding-top: 4%;
+	text-align: center;
+	margin-top: 0%;
+	margin-bottom: 8%;
+	font-family: 'Courgette', cursive;
+	color: #FbF8FF;
+	font-size: 20px;
+}
+
+#name {
+	text-align: right;
+	padding-right: 5%;
+	font-family: 'Courgette', cursive;
+	color: #ccc8cc;
+}
+
+body {
+	background: #3ab7ff;
+}
+
+button {
+	margin: auto;
+	margin-top: 6px;
+	font-family: 'Contrail One', cursive;
+	border-color: #ccc8cc;
+	background-color: transparent;
+	color: white;
+	border-style: solid;
+}
+
+button:hover {
+	border-color: #aaa;
+	background-color: #0aa7fc;
+}
+
+#tweet {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0%;
+	font-size: 40px
+}
