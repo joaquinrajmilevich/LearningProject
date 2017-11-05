@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  background-color: #232323;
+}
+
+h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-size: 80px;
+  font-weight: 600;
+}
+
+span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: 40px;
+}
