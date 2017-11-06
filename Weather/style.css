@@ -4,12 +4,13 @@ body {
 }
 
 h1 {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  margin: 0 auto;
   justify-content: center;
   color: white;
   font-size: 80px;
   font-weight: 600;
+  text-align: center;
 }
 
 span {
