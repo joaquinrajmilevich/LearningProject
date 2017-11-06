@@ -19,3 +19,17 @@ span {
     color: white;
     font-size: 40px;
 }
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  float: left;
+  background: none;
+  border-color: white;
+  color: white;
+  font-size: 15px;
+}
