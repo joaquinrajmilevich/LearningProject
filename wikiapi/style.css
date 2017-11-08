@@ -1,0 +1,28 @@
+body {
+  background: #418b8b;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5%;
+  background: #51adad8f;
+  border: 2px solid rgb(223, 223, 223);
+  outline: none;
+  width: 30%;
+  height: 1.5rem;
+  -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+	-webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+  box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+  transform: all 0.7s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  text-align: center;
+}
+
+input:hover {
+  -moz-box-shadow: 6.5px 8px 8px rgba(68,68,68,0.6);
+	-webkit-box-shadow: 6.5px 8px 8px rgba(68,68,68,0.6);
+  box-shadow: 6.5px 8px 8px rgba(68,68,68,0.6);
+  border-color: white;
+}
