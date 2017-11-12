@@ -87,11 +87,22 @@ div {
   -webkit-box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
   box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
   text-decoration: none;
+  transition: border-left-color ease-in 0.4s;
+  border-left: 0;
+  border-left-color: rgba(119, 136, 153, 0)
+}
+
+#results {
   visibility: hidden;
   opacity: 0;
-   transition: opacity ease-in-out 1s;
+  transition: opacity ease-in-out 1s;
   -webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
+}
+
+.des:hover {
+  border-left: 6.5px solid;
+  border-left-color: rgba(119, 136, 153, 1);
 }
 
 .title {

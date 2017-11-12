@@ -1,9 +1,12 @@
 let i = document.querySelector("input");
 let desc = document.getElementsByClassName("desc");
 let title = document.getElementsByClassName("title");
+let res = document.getElementById("results");
 i.addEventListener("keypress", function (e) {
 	let key = e.which || e.keyCode;
 	if (key === 13) {
+		res.style.visibility = 'visible';
+  	res.style.opacity = 1;
   	setApi();
   }
 });
@@ -22,8 +25,6 @@ function showResults(api) {
   		title[i].textContent = json[1][i];
   		desc[i].textContent = json[2][i];
   		a[i].setAttribute("href", json[3][i]);
-  		a[i].style.visibility = 'visible';
-      a[i].style.opacity = 1;
   	}
   });
 }
