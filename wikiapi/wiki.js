@@ -1,4 +1,3 @@
-let b = document.querySelector("button");
 let i = document.querySelector("input");
 let desc = document.getElementsByClassName("desc");
 let title = document.getElementsByClassName("title");
@@ -23,7 +22,8 @@ function showResults(api) {
   		title[i].textContent = json[1][i];
   		desc[i].textContent = json[2][i];
   		a[i].setAttribute("href", json[3][i]);
-  		a[i].style.visibility = 'visible';	
+  		a[i].style.visibility = 'visible';
+      a[i].style.opacity = 1;
   	}
   });
 }
