@@ -17,7 +17,7 @@ function setApi() {
 }
 
 function showResults(api) {
-	let a = document.querySelectorAll("a");
+	let a = document.getElementsByClassName("des");
 	$.getJSON(api, function(json) {
   	for (let i = 0; i < json[1].length; i++) {
   		title[i].textContent = json[1][i];
