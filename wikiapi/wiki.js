@@ -5,9 +5,9 @@ let res = document.getElementById("results");
 i.addEventListener("keypress", function (e) {
 	let key = e.which || e.keyCode;
 	if (key === 13) {
-		res.style.visibility = 'visible';
-  	res.style.opacity = 1;
   	setApi();
+  	res.style.visibility = 'visible';
+  	res.style.opacity = 1;
   }
 });
 
