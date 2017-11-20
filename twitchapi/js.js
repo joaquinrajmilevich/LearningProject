@@ -1,6 +1,6 @@
 const channels = [
   "ESL_SC2", "OgamingSC2", "cretetion", 
-  "freecodecamp", "storbeck", "habathcx", 
+  "freecodecamp", "ZeroxMercy", "habathcx", 
   "RobotCaleb", "noobs2ninjas"
 ];
 let li = document.querySelectorAll("li");
