@@ -8,6 +8,7 @@ a {
   text-decoration: none;
   color: black;
   opacity: 0.75;
+  outline: none;
 }
 div {
   display: flex;
