@@ -51,7 +51,7 @@ function addStuff(i) {
   setChannel(i);
 }
 
-for (let i = 0; i < channels.length; i += 1) {
+for (let i = 0; i < channels.length; i++) {
   addStuff(i);
 }
 
