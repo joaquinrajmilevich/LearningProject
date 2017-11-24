@@ -1,0 +1,19 @@
+{
+  "name": "learningproject",
+  "version": "1.0.0",
+  "description": "My projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Joaquinrajmilevich/LearningProject.git"
+  },
+  "author": "Joaquin Rajmilevich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joaquinrajmilevich/LearningProject/issues"
+  },
+  "homepage": "https://github.com/Joaquinrajmilevich/LearningProject#readme"
+}
