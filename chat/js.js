@@ -84,3 +84,11 @@ button.addEventListener('click', () => {
   conversation();
   user.value = '';
 });
+
+user.addEventListener('keypress', (e) => {
+  const key = e.which || e.keyCode;
+  if (key === 13) {
+    conversation();
+    user.value = '';
+  }
+});
