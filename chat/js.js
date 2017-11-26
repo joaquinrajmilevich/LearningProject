@@ -7,7 +7,7 @@ let c = false;
 let c1 = false;
 let c2 = false;
 let c3 = false;
-
+// be smart
 function isIn(x, val) {
   let t;
   for (let i = 0; i < x.length; i++) {
