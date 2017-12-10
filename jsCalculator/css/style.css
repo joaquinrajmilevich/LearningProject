@@ -7,40 +7,56 @@ html body {
 
 #calcbody {
   display: grid;
-  margin-top: 25%;
+  width: 320px;
+  height: 510px;
+  margin-top: 15%;
   margin-left: auto;
   margin-right: auto;
-  border: 0.7px solid #DDD2C1;
-  width: 320px;
-  height: 420px;
+}
+
+h1 {
+  text-align: right;
+  font-size: 30px;
+  color: #DDD2C1;
+  margin-top: 0;
+}
+
+h3 {
+  text-align: right;
+  color: #DDD2C1;
+  margin-top: 0;
 }
 
 #buttons {
   display: grid;
   grid-template-areas: "a a a e";
-  grid-column-end: span e;
+  border: 0.7px solid #ddd2c1;
 }
+
 button {
   background-color: hsl(167, 19%, 55%);
   font-size: 22px;
   border: 0.7px solid #DDD2C1;
-  -webkit-transition: cubic-bezier(.45,.05,.55,.95) 0.1s;
-  -moz-transition: cubic-bezier(.45,.05,.55,.95) 0.1s;
-  transition: cubic-bezier(.45,.05,.55,.95) 0.1s;
+  -webkit-transition: cubic-bezier(.45, .05, .55, .95) 0.1s;
+  -moz-transition: cubic-bezier(.45, .05, .55, .95) 0.1s;
+  transition: cubic-bezier(.45, .05, .55, .95) 0.1s;
   text-align: center;
+  outline: none !important;
 }
 
 #a {
   display: grid;
   grid-template: "a a a";
 }
+
 #a button {
   width: 85px;
   height: 105px;
 }
+
 #e button {
   width: 65px;
-  height: 84px;
+  height: 70px;
   font-size: 18px;
   border: none;
   background-color: hsl(22, 20%, 45%);
@@ -52,9 +68,27 @@ button {
   padding-right: 8px;
   background-color: hsl(22, 20%, 48%);
 }
+
 #a button:active {
   font-size: 0%;
   padding-left: 8px;
   padding-right: 8px;
   background-color: hsl(167, 19%, 58%);
+}
+
+#cont {
+  display: grid;
+  grid-template: "buttons" "h1";
+  margin-top: 15%;
+  -webkit-transition: ease-in-out 2s;
+  -moz-transition: ease-in-out 2s;
+  transition: ease-in-out 2s;
+}
+
+.wipe {
+  background-color: rgba(221, 210, 193, 1)
+}
+
+button::-moz-focus-inner {
+  border: 0;
 }
