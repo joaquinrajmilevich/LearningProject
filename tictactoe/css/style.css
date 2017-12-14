@@ -109,3 +109,51 @@ table {
     height: 130px;
   }
 }
+
+.win {
+  position: relative;
+  animation-name: win;
+  animation-duration: 1.5s;
+  background-color: red;
+}
+.win:after {
+  background-color: red;
+}
+@keyframes win {
+  from {
+    background-color: blue;
+  }
+  to {
+    background-color: red;
+  }
+}
+
+.xback {
+  position: relative;
+  animation-name: xback;
+  animation-duration: 1.5s;
+  background-color: blue;
+}
+.oback {
+  position: relative;
+  animation-name: oback;
+  animation-duration: 1.5s;
+  background-color: green;
+}
+
+@keyframes xback {
+  from {
+    background-color: rgba(255, 0, 0, 0);
+  }
+  to {
+    background-color: blue;
+  }
+}
+@keyframes oback {
+  from {
+    background-color: rgba(255, 0, 0, 0);
+  }
+  to {
+    background-color: green;
+  }
+}
