@@ -101,6 +101,9 @@ function minimax(board, cplay) {
 function filterIt(board) {
   return board.filter(s => s !== 'o' && s !== 'x');
 }
+function ai() {
+
+}
 a.forEach((e) => {
   e.addEventListener('click', () => {
     if (!stop) {
@@ -113,15 +116,17 @@ a.forEach((e) => {
           console.log('you win');
           wins(huPlayer);
         } else {
-          const move = minimax(boardStatus, aiPlayer).index;
-          console.log(move);
-          boardStatus[move] = aiPlayer;
-          a[move].classList.add('circle');
-          a[move].parentElement.classList.add('oback');
-          if (winning(boardStatus, aiPlayer)) {
-            console.log('you lose');
-            wins(aiPlayer);
-          }
+          window.setTimeout(() => {
+            const move = minimax(boardStatus, aiPlayer).index;
+            console.log(move);
+            boardStatus[move] = aiPlayer;
+            a[move].classList.add('circle');
+            a[move].parentElement.classList.add('oback');
+            if (winning(boardStatus, aiPlayer)) {
+              console.log('you lose');
+              wins(aiPlayer);
+            }
+          }, 500);
         }
       }
     }
