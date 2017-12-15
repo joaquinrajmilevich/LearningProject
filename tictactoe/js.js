@@ -119,6 +119,7 @@ x.addEventListener('click', () => {
   huPlayer = 'x';
   aiPlayer = 'o';
   popup.classList.add('hide');
+  popup.style.visibility = 'hidden';
   table.classList.add('show');
 });
 o.addEventListener('click', () => {
@@ -128,6 +129,7 @@ o.addEventListener('click', () => {
   c1 = 'oa';
   c2 = 'xa';
   popup.classList.add('hide');
+  popup.style.visibility = 'hidden';
   table.classList.add('show');
   const move = minimax(boardStatus, aiPlayer).index;
   boardStatus[move] = aiPlayer;
