@@ -124,7 +124,7 @@ a.forEach((e) => {
     count += 1;
     if (!stop) {
       count += 1;
-      window.setTimeout(wins, 1000);
+      window.setTimeout(wins, 1600);
       const index = Array.prototype.indexOf.call(a, e);
       if (boardStatus[index] !== huPlayer && boardStatus[index] !== aiPlayer) {
         boardStatus[index] = huPlayer;
@@ -132,7 +132,7 @@ a.forEach((e) => {
         e.parentElement.classList.add('xback');
         if (winning(boardStatus, huPlayer)) {
           console.log('you win');
-          window.setTimeout(wins, 1000);
+          window.setTimeout(wins, 1600);
         } else {
           window.setTimeout(() => {
             const move = minimax(boardStatus, aiPlayer).index;
@@ -141,7 +141,7 @@ a.forEach((e) => {
             a[move].parentElement.classList.add('oback');
             if (winning(boardStatus, aiPlayer)) {
               console.log('you lose');
-              window.setTimeout(wins, 1000);
+              window.setTimeout(wins, 1600);
             }
           }, 500);
         }
