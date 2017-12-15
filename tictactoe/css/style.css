@@ -313,9 +313,9 @@ div {
 
 table {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
   border-collapse: collapse;
   opacity: 0;
 }
