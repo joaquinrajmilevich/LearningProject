@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+html body {
+  background-color: #3E3455;
+}
+
 div {
   width: 150px;
   height: 150px;
-  /*   font-size: 150px;
-  text-align: center;
-  line-height: 150px; */
   display: flex;
+  position: relative;
   flex-direction: row;
   justify-content: center;
 }
@@ -15,25 +18,38 @@ div {
 }
 
 .v {
-  border-left: 4px solid #500;
-  border-right: 4px solid #500;
+  border-left: 4px solid #C5B3BF;
+  border-right: 4px solid #C5B3BF;
 }
 
 .h {
-  border-top: 4px solid #500;
-  border-bottom: 4px solid #500;
+  border-top: 4px solid #C5B3BF;
+  border-bottom: 4px solid #C5B3BF;
 }
 
 table {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   border-collapse: collapse;
-  margin: 0 auto;
+  opacity: 0;
 }
-
-
-.circle {
+.o {
   width: 100px;
   height: 100px;
-  border: 6px solid black;
+  border: 6px solid #5BD3B8;
+  margin-top: 22.5px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+  border-radius: 100%;
+  animation-name: cir;
+  animation-duration: 1s;
+}
+.oa {
+  width: 100px;
+  height: 100px;
+  border: 6px solid #CB39AA;
   margin-top: 22.5px;
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
@@ -74,7 +90,7 @@ table {
   content: '';
   height: 130px;
   width: 6px;
-  background-color: #333;
+  background-color: #CB39AA;
 }
 
 .x:before {
@@ -84,6 +100,35 @@ table {
 }
 
 .x:after {
+  animation-name: xl;
+  animation-duration: 1s;
+  transform: rotate(-45deg);
+}
+.xa {
+  position: relative;
+  top: 15px;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+.xa:before,
+.xa:after {
+  position: absolute;
+  left: 15px;
+  content: '';
+  height: 130px;
+  width: 6px;
+  background-color: #5BD3B8;
+}
+
+.xa:before {
+  animation-name: xs;
+  animation-duration: 1s;
+  transform: rotate(45deg);
+}
+
+.xa:after {
   animation-name: xl;
   animation-duration: 1s;
   transform: rotate(-45deg);
@@ -114,17 +159,34 @@ table {
   position: relative;
   animation-name: win;
   animation-duration: 1.5s;
-  background-color: red;
+  background-color: #65D322;
 }
 .win:after {
-  background-color: red;
+  background-color: #65D322;
 }
 @keyframes win {
   from {
-    background-color: blue;
+    background-color: #5BD3B8;
   }
   to {
-    background-color: red;
+    background-color: #65D322;
+  }
+}
+.wino {
+  position: relative;
+  animation-name: wino;
+  animation-duration: 1.5s;
+  background-color: #65D322;
+}
+.wino:after {
+  background-color: #65D322;
+}
+@keyframes wino {
+  from {
+    background-color: #CB39AA;
+  }
+  to {
+    background-color: #65D322;
   }
 }
 
@@ -132,13 +194,13 @@ table {
   position: relative;
   animation-name: xback;
   animation-duration: 1.5s;
-  background-color: blue;
+  background-color: #5BD3B8;
 }
 .oback {
   position: relative;
   animation-name: oback;
   animation-duration: 1.5s;
-  background-color: green;
+  background-color: #CB39AA;
 }
 
 @keyframes xback {
@@ -146,7 +208,7 @@ table {
     background-color: rgba(255, 0, 0, 0);
   }
   to {
-    background-color: blue;
+    background-color: #5BD3B8;
   }
 }
 @keyframes oback {
@@ -154,6 +216,55 @@ table {
     background-color: rgba(255, 0, 0, 0);
   }
   to {
-    background-color: green;
+    background-color: #CB39AA;
   }
+}
+
+#popup {
+  display: absolute;
+  margin: 0px auto 0px auto;
+  top: 80px;
+  width: 300px;
+  height: 125px;
+  background-color: grey;
+}
+td {
+  transition: background-color 0.15s ease-in;
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
+}
+td:hover {
+  background-color: rgb(82, 69, 112);
+}
+button {
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 90px;
+  background-color: #3E3455;
+  border: 3px solid #5BD3B8;
+  color: #5BD3B8;
+  transition: background-color 0.15s ease-in;
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
+}
+button:hover {
+  background-color: rgba(203, 57, 171, 0.788);
+}
+.hide {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  -webkit-transition: opacity 0.3s ease-in;
+  -moz-transition: opacity 0.3s ease-in;
+  -o-transition: opacity 0.3s ease-in;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
 }
