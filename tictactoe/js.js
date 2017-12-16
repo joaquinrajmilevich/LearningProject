@@ -150,4 +150,4 @@ a.forEach((e) => {
   });
 });
 
-popup1.addEventListener('click', () => location.reload());
+popup1.addEventListener("click", () => history.go(0));
