@@ -9,36 +9,45 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </head>
 
-<body>
+<body ondragstart="return false;" ondrop="return false;">
   <div id="container">
     <div id="wrapper">
       <div id="left">
         <a href="#">
-          <div class="c" id="green"></div>
+          <div class="c" id="green">
+            <audio preload="auto" src="audio/simonSound1.mp3"></audio>
+          </div>
         </a>
         <a href="#">
-          <div class="c" id="yellow"></div>
+          <div class="c" id="yellow">
+            <audio preload="auto" src="audio/simonSound2.mp3"></audio>
+          </div>
         </a>
       </div>
-
       <div id="right">
         <a href="#">
-          <div class="c" id="red"></div>
+          <div class="c" id="red">
+            <audio preload="auto" src="audio/simonSound3.mp3"></audio>
+          </div>
         </a>
         <a href="#">
-          <div class="c" id="blue"></div>
+          <div class="c" id="blue">
+            <audio preload="auto" src="audio/simonSound4.mp3"></audio>
+          </div>
         </a>
       </div>
       <div id="center">
-        <h1>SIMON<sup>®</sup></h1>
+        <h1>SIMON
+          <sup>®</sup>
+        </h1>
         <div id="counter">
-          <p>01</p>
+          <p></p>
         </div>
         <div id="mode">
           <p>mode</p>
         </div>
         <div id="control">
-          <button id="start">START</button>
+          <button id="start" disabled>START</button>
           <button id="strict">STRICT</button>
         </div>
         <div id="onf">
@@ -52,8 +61,7 @@
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+  <script src="lib/jquery-3.2.1.min.js"></script>
   <script src="script.js"></script>
 </body>
 
