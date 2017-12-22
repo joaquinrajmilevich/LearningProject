@@ -1,36 +1,69 @@
 const colors = document.querySelectorAll('.c');
-const arr = [1, 3, 2, 0, 1, 2, 1, 0];
-const els = [0, 1, 2, 3];
-
-function game() {
-  for (let i = 0; i < arr.length; i++) {
-    setTimeout(() => {
-      console.log(colors[i].trigger('mousedown'));
-      setTimeout(() => {
-        $(colors[i]).delay(900).trigger('mouseup');
-      }, 500);
-    }, 1500);
-  }
-}
-
-arr.push(Math.floor(Math.random() * 3.99));
+const arr = [];
+const playerArr = [];
+let counter = 0;
+let stop = false;
 $('input').removeAttr('checked');
-
-function startGame() {
+function setLight(el) {
+  const audio = $(el).children()[0];
+  $(el).addClass('contrast');
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.pause();
+  audio.play();
+}
+function removeLight(el) {
+  $(el).removeClass('contrast');
+}
+function ai() {
+  arr.push(Math.floor(Math.random() * 3.99));
+  let a = 0;
+  const light = setInterval(() => {
+    setLight(colors[arr[a]]);
+    const timeout = setTimeout(() => {
+      removeLight(colors[arr[a]]);
+      a += 1;
+    }, 500);
+    if (a === arr.length) {
+      clearTimeout(timeout);
+      clearInterval(light);
+    }
+  }, 1000);
+}
+function player() {
   colors.forEach((e) => {
-    const audio = $(e).children()[0];
     $(e).mousedown(() => {
-      $(e).addClass('contrast');
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.pause();
-      audio.play();
+      if (!stop) {
+        setLight(e);
+        playerArr.push(Array.prototype.indexOf.call(colors, e));
+        for (let i = 0; i < playerArr.length; i++) {
+          console.log(i);
+          if (JSON.stringify(playerArr) === JSON.stringify(arr)) {
+            playerArr.length = 0;
+            ai();
+            counter += 1;
+            $('#counter p').text(counter);
+          } else if (playerArr[i] !== arr[i]) {
+            alert('You lose');
+            playerArr.length = 0;
+            arr.length = 0;
+            $('#counter p').text('--');
+            stop = true;
+            counter = 0;
+            break;
+          }
+        }
+      }
     });
     $(e).mouseup(() => {
-      $(e).removeClass('contrast');
+      removeLight(e);
     });
-    game();
   });
+}
+
+function game() {
+  ai();
+  player();
 }
 
 $('input').click(() => {
@@ -43,4 +76,7 @@ $('input').click(() => {
   }
 });
 
-$('#start').click(() => startGame());
+$('#start').click(() => {
+  stop = false;
+  game();
+});
