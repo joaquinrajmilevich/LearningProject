@@ -79,6 +79,15 @@ body {
     margin: 0 auto;
     letter-spacing: 4px;
   }
+  button {
+    background-color: white;
+    border: 1px solid black;
+    color: rgb(70, 70, 70);
+    border-radius: 5px;
+    outline: none;
+    width: 100px;
+    height: 30px;
+  }
   #control {
     display: flex;
     flex-direction: row;
@@ -91,7 +100,7 @@ body {
     font-size: 14px;
     color: white;
     margin-top: 35px;
-    margin-left: 90px;
+    margin-left: 120px;
   }
   #onf {
     display: flex;
