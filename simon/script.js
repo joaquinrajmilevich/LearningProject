@@ -3,7 +3,7 @@ const arr = [];
 const playerArr = [];
 let counter = 0;
 let stop = false;
-$('input').removeAttr('checked');
+let mStrict = false;
 function setLight(el) {
   const audio = $(el).children()[0];
   $(el).addClass('contrast');
@@ -12,12 +12,14 @@ function setLight(el) {
   audio.pause();
   audio.play();
 }
+
 function removeLight(el) {
   $(el).removeClass('contrast');
 }
+
 function ai() {
-  arr.push(Math.floor(Math.random() * 3.99));
   let a = 0;
+  stop = true;
   const light = setInterval(() => {
     setLight(colors[arr[a]]);
     const timeout = setTimeout(() => {
@@ -27,43 +29,49 @@ function ai() {
     if (a === arr.length) {
       clearTimeout(timeout);
       clearInterval(light);
+      stop = false;
     }
   }, 1000);
-  return true;
 }
+
+function check() {
+  for (let i = 0; i < playerArr.length; i++) {
+    console.log(i);
+    if (JSON.stringify(playerArr) === JSON.stringify(arr)) {
+      playerArr.length = 0;
+      arr.push(Math.floor(Math.random() * 3.99));
+      ai();
+      counter += 1;
+      $('#counter p').text(counter);
+    } else if (playerArr[i] !== arr[i] && mStrict) {
+      playerArr.length = 0;
+      arr.length = 0;
+      arr.push(Math.floor(Math.random() * 3.99));
+      ai();
+      counter = 0;
+      $('#counter p').text('--');
+    } else if (playerArr[i] !== arr[i]) {
+      playerArr.length = 0;
+      ai();
+    }
+  }
+}
+
 function player() {
   colors.forEach((e) => {
     $(e).mousedown(() => {
       if (!stop) {
         setLight(e);
         playerArr.push(Array.prototype.indexOf.call(colors, e));
-        for (let i = 0; i < playerArr.length; i++) {
-          console.log(i);
-          if (JSON.stringify(playerArr) === JSON.stringify(arr)) {
-            playerArr.length = 0;
-            ai();
-            counter += 1;
-            $('#counter p').text(counter);
-          } else if (playerArr[i] !== arr[i]) {
-            playerArr.length = 0;
-            alert('You lose');
-            arr.length = 0;
-            $('#counter p').text('--');
-            stop = true;
-            counter = 0;
-          }
-        }
+        window.setTimeout(check, 250);
       }
     });
     $(e).mouseup(() => {
-      removeLight(e);
+      if (!stop) {
+        removeLight(e);
+      }
     });
   });
-}
-
-function game() {
-  ai();
-  player();
 }
 
 $('input').click(() => {
@@ -76,7 +84,22 @@ $('input').click(() => {
   }
 });
 
+$('#strict').click(() => {
+  if (mStrict) {
+    mStrict = false;
+  }
+  mStrict = true;
+  playerArr.length = 0;
+  arr.length = 0;
+  arr.push(Math.floor(Math.random() * 3.99));
+  ai();
+  counter = 0;
+  $('#counter p').text('--');
+});
+
 $('#start').click(() => {
+  arr.push(Math.floor(Math.random() * 3.99));
   stop = false;
-  game();
+  ai();
+  player();
 });
