@@ -14,24 +14,24 @@
     <div id="wrapper">
       <div id="left">
         <a href="#">
-          <div class="c" id="green">
+          <div class="c" id="green" value="0">
             <audio preload="auto" src="audio/simonSound1.mp3"></audio>
           </div>
         </a>
         <a href="#">
-          <div class="c" id="yellow">
+          <div class="c" id="yellow" value="1">
             <audio preload="auto" src="audio/simonSound2.mp3"></audio>
           </div>
         </a>
       </div>
       <div id="right">
         <a href="#">
-          <div class="c" id="red">
+          <div class="c" id="red" value="2">
             <audio preload="auto" src="audio/simonSound3.mp3"></audio>
           </div>
         </a>
         <a href="#">
-          <div class="c" id="blue">
+          <div class="c" id="blue" value="3">
             <audio preload="auto" src="audio/simonSound4.mp3"></audio>
           </div>
         </a>
@@ -47,13 +47,13 @@
           <p>mode</p>
         </div>
         <div id="control">
-          <button id="start" disabled>START</button>
-          <button id="strict">STRICT</button>
+          <button id="start" disabled autocomplete="off">START</button>
+          <button id="strict" disabled autocomplete="off">NORMAL</button>
         </div>
         <div id="onf">
           <p class="st">off</p>
-          <label class="switch">
-            <input type="checkbox">
+            <label class="switch">
+            <input type="checkbox" autocomplete="off">
             <span class="slider round"></span>
           </label>
           <p class="st">on</p>

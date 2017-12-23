@@ -4,6 +4,9 @@ const playerArr = [];
 let counter = 0;
 let stop = false;
 let mStrict = false;
+const speed = [1000, 800, 600];
+let s = 0;
+
 function setLight(el) {
   const audio = $(el).children()[0];
   $(el).addClass('contrast');
@@ -15,6 +18,13 @@ function setLight(el) {
 
 function removeLight(el) {
   $(el).removeClass('contrast');
+}
+
+function reset() {
+  playerArr.length = 0;
+  arr.length = 0;
+  counter = 0;
+  $('#counter p').text('--');
 }
 
 function ai() {
@@ -30,13 +40,16 @@ function ai() {
       clearTimeout(timeout);
       clearInterval(light);
       stop = false;
+      s += 1;
+      if (s === 3) {
+        s = 0;
+      }
     }
-  }, 1000);
+  }, speed[s]);
 }
 
 function check() {
   for (let i = 0; i < playerArr.length; i++) {
-    console.log(i);
     if (JSON.stringify(playerArr) === JSON.stringify(arr)) {
       playerArr.length = 0;
       arr.push(Math.floor(Math.random() * 3.99));
@@ -44,12 +57,9 @@ function check() {
       counter += 1;
       $('#counter p').text(counter);
     } else if (playerArr[i] !== arr[i] && mStrict) {
-      playerArr.length = 0;
-      arr.length = 0;
       arr.push(Math.floor(Math.random() * 3.99));
+      reset();
       ai();
-      counter = 0;
-      $('#counter p').text('--');
     } else if (playerArr[i] !== arr[i]) {
       playerArr.length = 0;
       ai();
@@ -61,8 +71,9 @@ function player() {
   colors.forEach((e) => {
     $(e).mousedown(() => {
       if (!stop) {
+        const key = Array.prototype.indexOf.call(colors, e);
+        playerArr.push(key);
         setLight(e);
-        playerArr.push(Array.prototype.indexOf.call(colors, e));
         window.setTimeout(check, 250);
       }
     });
@@ -73,33 +84,36 @@ function player() {
     });
   });
 }
-
+player();
 $('input').click(() => {
   if ($('input').is(':checked')) {
     $('button').prop('disabled', false);
+    $('#strict').prop('disabled', false);
     $('#counter p').text('--');
+    stop = true;
   } else {
     $('button').prop('disabled', true);
+    $('#strict').prop('disabled', true);
     $('#counter p').text('');
+    reset();
+    stop = true;
   }
 });
 
 $('#strict').click(() => {
   if (mStrict) {
     mStrict = false;
+    $('#strict').text('NORMAL');
+  } else {
+    mStrict = true;
+    $('#strict').text('STRICT');
   }
-  mStrict = true;
-  playerArr.length = 0;
-  arr.length = 0;
-  arr.push(Math.floor(Math.random() * 3.99));
-  ai();
-  counter = 0;
-  $('#counter p').text('--');
+  reset();
 });
 
 $('#start').click(() => {
+  reset();
   arr.push(Math.floor(Math.random() * 3.99));
-  stop = false;
   ai();
-  player();
+  stop = false;
 });
