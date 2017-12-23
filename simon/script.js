@@ -29,6 +29,7 @@ function ai() {
       clearInterval(light);
     }
   }, 1000);
+  return true;
 }
 function player() {
   colors.forEach((e) => {
@@ -44,13 +45,12 @@ function player() {
             counter += 1;
             $('#counter p').text(counter);
           } else if (playerArr[i] !== arr[i]) {
-            alert('You lose');
             playerArr.length = 0;
+            alert('You lose');
             arr.length = 0;
             $('#counter p').text('--');
             stop = true;
             counter = 0;
-            break;
           }
         }
       }
