@@ -94,8 +94,8 @@ $('input').click(() => {
   } else {
     $('button').prop('disabled', true);
     $('#strict').prop('disabled', true);
-    $('#counter p').text('');
     reset();
+    $('#counter p').text('');
     stop = true;
   }
 });
