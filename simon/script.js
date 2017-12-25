@@ -57,8 +57,8 @@ function check() {
       counter += 1;
       $('#counter p').text(counter);
     } else if (playerArr[i] !== arr[i] && mStrict) {
-      arr.push(Math.floor(Math.random() * 3.99));
       reset();
+      arr.push(Math.floor(Math.random() * 3.99));
       ai();
     } else if (playerArr[i] !== arr[i]) {
       playerArr.length = 0;
